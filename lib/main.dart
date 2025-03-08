@@ -42,6 +42,11 @@ class MyAppState extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void removeFav(WordPair value){
+    fav.remove(value);
+    notifyListeners();
+  }
 }
 
 class BigCard extends StatelessWidget {
@@ -176,7 +181,7 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
-
+    final theme = Theme.of(context);
     if (appState.fav.isEmpty) {
       return Center(
         child: Text('No favorites yet.'),
@@ -192,8 +197,15 @@ class FavoritesPage extends StatelessWidget {
         ),
         for (var pair in appState.fav)
           ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text(pair.asLowerCase),
+                leading: Icon(Icons.favorite),
+                title: Text(pair.asLowerCase),
+                trailing : IconButton(
+                  icon : Icon(Icons.delete_outline),
+                  onPressed: (){
+                    appState.removeFav(pair);
+                  },                
+                )
+
           ),
       ],
     );
