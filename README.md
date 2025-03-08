@@ -1,6 +1,5 @@
 # namer
-
-A new Flutter project.
+This project is based on the "First Flutter App" codelab by Google, which helps beginners get started with Flutter by building a simple mobile app. The goal of the codelab is to introduce basic concepts of Flutter and demonstrate how to create a fully functional app with a user interface, state management, and interactivity
 
 ## Screenshot
 ![Alt text](./Screenshot/Simulator%20Screenshot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202025-03-09%20at%2003.23.37.png)
